@@ -319,6 +319,14 @@
             line-height: 1.1;
         }
 
+        .section-intro {
+            max-width: 760px;
+            margin: -1.5rem 0 2.5rem;
+            color: var(--muted);
+            font-size: 0.96rem;
+            line-height: 1.7;
+        }
+
         /* ── EXPERIENCE ── */
         .timeline {
             position: relative;
@@ -493,6 +501,67 @@
             border: 1px solid var(--border);
         }
 
+
+        /* ── PROJECTS / SIDE PROJECTS ── */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.85rem;
+            transition: box-shadow 0.3s, transform 0.3s;
+            min-height: 100%;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 20px 50px rgba(0,0,0,0.07);
+            transform: translateY(-4px);
+        }
+
+        .project-kicker {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.65rem;
+        }
+
+        .project-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-desc {
+            font-size: 0.9rem;
+            color: #444;
+            line-height: 1.65;
+            margin-bottom: 1.1rem;
+        }
+
+        .project-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .project-stack span {
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 0.28rem 0.65rem;
+            border-radius: 20px;
+            background: rgba(26, 107, 255, 0.08);
+            color: var(--accent);
+        }
+
         /* ── CERTIFICATIONS ── */
         .certs-grid {
             display: grid;
@@ -663,6 +732,7 @@
     <nav>
         <ul>
             <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Side Projects</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#certifications">Certs</a></li>
@@ -681,7 +751,7 @@
                 Computer Engineer specializing in DevOps, Cloud Infrastructure, Machine Learning, Big Data, and Web Development. Building automated pipelines and scalable systems from Batangas, Philippines.
             </p>
             <div class="hero-btns">
-                <a href="#experience" class="btn btn-solid"><i class="fas fa-briefcase"></i> Experience</a>
+                <a href="#projects" class="btn btn-solid"><i class="fas fa-diagram-project"></i> View Projects</a>
                 <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Get In Touch</a>
             </div>
         </div>
@@ -722,6 +792,127 @@
     </div>
 </section>
 
+
+<!-- Projects / Side Projects -->
+<div class="section-wrap">
+<section id="projects" class="section">
+    <div class="section-header">
+        <div>
+            <div class="section-label">Projects / Side Projects</div>
+            <h2 class="section-title">Projects, Side Projects &amp; Automation Builds</h2>
+        </div>
+    </div>
+
+    <p class="section-intro">
+        A separate project section for hands-on systems work, portfolio builds, and automation examples. These are presented as selected projects, not as entries in my professional employment timeline.
+    </p>
+
+    <div class="projects-grid">
+
+        <div class="project-card">
+            <div class="project-kicker">Side Project · GoHighLevel · Recruiting Funnel</div>
+            <div class="project-title">Candidate Submission &amp; Completion Automation</div>
+            <p class="project-desc">
+                Improved a GoHighLevel-connected recruiting funnel that handled candidate submissions, Loom links, resume links, city, availability, completion status, and internal routing. Updated workflow logic, cleaned unnecessary steps, removed redaction where no longer required, and verified completed records through test runs.
+            </p>
+            <div class="project-stack">
+                <span>GoHighLevel</span><span>n8n</span><span>Google Drive</span><span>Gmail</span><span>Zulip API</span><span>QA Testing</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-kicker">Side Project · GoHighLevel · Lost Leads</div>
+            <div class="project-title">Lost Leads &amp; Dentistry Appointment Automation</div>
+            <p class="project-desc">
+                Built GoHighLevel automation flows for dental appointment follow-up and lost-lead recovery. The workflow organizes contacts, appointment status, missed opportunities, follow-up tasks, and internal alerts so the team can respond faster and reduce unworked leads.
+            </p>
+            <div class="project-stack">
+                <span>GoHighLevel</span><span>Lost Leads</span><span>Dentistry Appointments</span><span>CRM Tags</span><span>Follow-up Tasks</span><span>Automation Testing</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-kicker">Side Project · GoHighLevel · Service Appointments</div>
+            <div class="project-title">Car Care Appointment Automation</div>
+            <p class="project-desc">
+                Created a GoHighLevel appointment automation concept for a car care service flow, covering lead capture, appointment booking, status updates, reminders, CRM tagging, and team notifications for service follow-up.
+            </p>
+            <div class="project-stack">
+                <span>GoHighLevel</span><span>Appointment Flow</span><span>Car Care</span><span>Reminders</span><span>CRM Pipeline</span><span>Customer Journey</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-kicker">Side Project · GoHighLevel · Local Services</div>
+            <div class="project-title">Plumber Appointment Automation</div>
+            <p class="project-desc">
+                Designed a GoHighLevel automation flow for plumber appointment requests, including form intake, CRM pipeline movement, lead assignment, appointment reminders, missed-lead follow-up, and notification routing for urgent service inquiries.
+            </p>
+            <div class="project-stack">
+                <span>GoHighLevel</span><span>Plumber Appointments</span><span>Lead Intake</span><span>Pipeline Automation</span><span>Notifications</span><span>Follow-up</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-kicker">Side Project · CRM · Customer Journey</div>
+            <div class="project-title">Renewal Reminder Automation</div>
+            <p class="project-desc">
+                Built a renewal reminder system keyed on next service date. The automation classifies upcoming, overdue, and high-value expired customers, prepares internal sales follow-up, and supports customer-facing reminder messages with a safe review-first launch path.
+            </p>
+            <div class="project-stack">
+                <span>n8n</span><span>Python Cron</span><span>Postgres</span><span>Docker</span><span>Customer Reminders</span><span>Sales Tasks</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-kicker">Side Project · Marketing Data · Attribution</div>
+            <div class="project-title">Agency Export Ingestion &amp; Dashboard Pipeline</div>
+            <p class="project-desc">
+                Designed ingestion for marketing exports using clinic-scoped files, row-level deduplication, field mapping, and warehouse-ready reporting views. Supported CRM outcome benchmarking and attribution dashboard updates for service marketing performance.
+            </p>
+            <div class="project-stack">
+                <span>CSV/XLSX</span><span>Python ETL</span><span>Postgres</span><span>Deduplication</span><span>Dashboard Data</span><span>Field Mapping</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-kicker">Side Project · Workflow Reliability</div>
+            <div class="project-title">Weekly Reporting API Automation</div>
+            <p class="project-desc">
+                Replaced a less reliable email-based reporting step with a direct Zulip API call through n8n. Verified the destination stream and topic, tested message output, and kept a rollback path to make the reporting workflow easier to maintain.
+            </p>
+            <div class="project-stack">
+                <span>n8n</span><span>Zulip API</span><span>HTTP Request</span><span>Reporting</span><span>Testing</span><span>Rollback Path</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-kicker">Side Project · Landing Pages · AI Backend</div>
+            <div class="project-title">AI Landing Page Backend for Publishable Drafts</div>
+            <p class="project-desc">
+                Worked on backend flow improvements that convert call and conversion insights into structured landing page drafts. The system supports keyword-driven copy generation, structural checks, review states, and publishable-page preparation.
+            </p>
+            <div class="project-stack">
+                <span>Python</span><span>Anthropic API</span><span>CallRail</span><span>Landing Pages</span><span>Backend</span><span>QA Checks</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-kicker">Side Project · Online Education · LMS</div>
+            <div class="project-title">Open edX Operations &amp; Platform Automation</div>
+            <p class="project-desc">
+                Supported Open edX environments with bulk registration tooling, password update scripts, staging/development/production planning, and CI/CD approach design for a maintainable online learning platform.
+            </p>
+            <div class="project-stack">
+                <span>Open edX</span><span>Django</span><span>Python</span><span>CI/CD</span><span>VMs</span><span>Documentation</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+</div>
+
+
 <!-- Experience -->
 <div class="section-wrap">
 <section id="experience" class="section">
@@ -733,6 +924,7 @@
     </div>
 
     <div class="timeline">
+
 
         <!-- NCS Group -->
         <div class="exp-item">
@@ -841,7 +1033,7 @@
     <div class="section-header">
         <div>
             <div class="section-label">Capabilities</div>
-            <h2 class="section-title">Technical Skills</h2>
+            <h2 class="section-title">Marketing Systems &amp; Automation Skills</h2>
         </div>
     </div>
 
@@ -849,93 +1041,104 @@
 
         <div class="skill-card">
             <div class="skill-card-header">
-                <div class="skill-icon"><i class="fas fa-cloud"></i></div>
-                <div class="skill-card-title">Cloud &amp; Infrastructure</div>
+                <div class="skill-icon"><i class="fas fa-funnel-dollar"></i></div>
+                <div class="skill-card-title">Marketing Automation &amp; CRM</div>
             </div>
             <div class="tags">
-                <span class="tag">Amazon Web Services</span>
-                <span class="tag">AWS S3</span>
-                <span class="tag">AWS Dataworks</span>
-                <span class="tag">Microsoft Azure</span>
-                <span class="tag">Terraform</span>
-                <span class="tag">PowerShell</span>
-                <span class="tag">Infrastructure as Code</span>
-                <span class="tag">Multi-tenant Architecture</span>
+                <span class="tag">GoHighLevel</span>
+                <span class="tag">CRM Workflows</span>
+                <span class="tag">Tags &amp; Segmentation</span>
+                <span class="tag">Customer Journeys</span>
+                <span class="tag">Lead Routing</span>
+                <span class="tag">Pipeline Stages</span>
+                <span class="tag">Opportunity Sync</span>
+                <span class="tag">Campaign Operations</span>
             </div>
         </div>
 
         <div class="skill-card">
             <div class="skill-card-header">
-                <div class="skill-icon"><i class="fas fa-infinity"></i></div>
-                <div class="skill-card-title">DevOps &amp; Orchestration</div>
+                <div class="skill-icon"><i class="fas fa-diagram-project"></i></div>
+                <div class="skill-card-title">Workflow Automation &amp; Integrations</div>
             </div>
             <div class="tags">
-                <span class="tag">Apache Airflow</span>
-                <span class="tag">MLflow</span>
-                <span class="tag">CI/CD Pipelines</span>
-                <span class="tag">Deployment Automation</span>
-                <span class="tag">Configuration Management</span>
-                <span class="tag">Monitoring &amp; Optimization</span>
+                <span class="tag">n8n</span>
+                <span class="tag">Zapier-style Automation</span>
+                <span class="tag">HTTP Request Nodes</span>
+                <span class="tag">REST APIs</span>
+                <span class="tag">Webhooks</span>
+                <span class="tag">Gmail</span>
+                <span class="tag">Google Drive</span>
+                <span class="tag">Zulip API</span>
+                <span class="tag">Stripe / Zoom Ready</span>
             </div>
         </div>
 
         <div class="skill-card">
             <div class="skill-card-header">
-                <div class="skill-icon"><i class="fas fa-brain"></i></div>
-                <div class="skill-card-title">ML &amp; Big Data</div>
+                <div class="skill-icon"><i class="fas fa-window-restore"></i></div>
+                <div class="skill-card-title">Funnels, Landing Pages &amp; LMS</div>
             </div>
             <div class="tags">
-                <span class="tag">Machine Learning</span>
-                <span class="tag">PySpark</span>
-                <span class="tag">Apache Spark</span>
-                <span class="tag">Apache Hadoop</span>
-                <span class="tag">JupyterLab</span>
-                <span class="tag">Neural Networks</span>
-                <span class="tag">Data Science</span>
-                <span class="tag">Big Data Analytics</span>
+                <span class="tag">Landing Pages</span>
+                <span class="tag">Sales Funnels</span>
+                <span class="tag">Membership Products</span>
+                <span class="tag">Open edX</span>
+                <span class="tag">Django</span>
+                <span class="tag">Vite / Static Builds</span>
+                <span class="tag">Form Tracking</span>
+                <span class="tag">Conversion QA</span>
             </div>
         </div>
 
         <div class="skill-card">
             <div class="skill-card-header">
                 <div class="skill-icon"><i class="fas fa-code"></i></div>
-                <div class="skill-card-title">Development</div>
+                <div class="skill-card-title">Backend &amp; Data Systems</div>
             </div>
             <div class="tags">
                 <span class="tag">Python</span>
-                <span class="tag">Django Framework</span>
-                <span class="tag">VB.Net</span>
-                <span class="tag">Web Development</span>
-                <span class="tag">API Development</span>
-                <span class="tag">Backend Integration</span>
-            </div>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-card-header">
-                <div class="skill-icon"><i class="fas fa-database"></i></div>
-                <div class="skill-card-title">Databases</div>
-            </div>
-            <div class="tags">
+                <span class="tag">Postgres</span>
                 <span class="tag">MySQL</span>
                 <span class="tag">MongoDB</span>
-                <span class="tag">Data Modeling</span>
-                <span class="tag">Database Optimization</span>
+                <span class="tag">CSV/XLSX Ingestion</span>
+                <span class="tag">Deduplication</span>
+                <span class="tag">Field Mapping</span>
+                <span class="tag">Dashboard Data Models</span>
             </div>
         </div>
 
         <div class="skill-card">
             <div class="skill-card-header">
-                <div class="skill-icon"><i class="fas fa-microchip"></i></div>
-                <div class="skill-card-title">IoT &amp; Other</div>
+                <div class="skill-icon"><i class="fas fa-cloud"></i></div>
+                <div class="skill-card-title">DevOps &amp; Cloud</div>
             </div>
             <div class="tags">
-                <span class="tag">Internet of Things</span>
-                <span class="tag">Arduino</span>
-                <span class="tag">TinkerCad</span>
-                <span class="tag">Adaptability</span>
-                <span class="tag">Problem Solving</span>
-                <span class="tag">Teaching &amp; Mentoring</span>
+                <span class="tag">Docker</span>
+                <span class="tag">GitHub Actions</span>
+                <span class="tag">CI/CD Pipelines</span>
+                <span class="tag">AWS</span>
+                <span class="tag">Microsoft Azure</span>
+                <span class="tag">Terraform</span>
+                <span class="tag">PowerShell</span>
+                <span class="tag">Deployment Automation</span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-card-header">
+                <div class="skill-icon"><i class="fas fa-clipboard-check"></i></div>
+                <div class="skill-card-title">Testing, Troubleshooting &amp; SOPs</div>
+            </div>
+            <div class="tags">
+                <span class="tag">Pre-launch Testing</span>
+                <span class="tag">Test Runs</span>
+                <span class="tag">Debugging</span>
+                <span class="tag">Rollback Planning</span>
+                <span class="tag">SOP Documentation</span>
+                <span class="tag">Process Improvement</span>
+                <span class="tag">Ownership</span>
+                <span class="tag">Clear Updates</span>
             </div>
         </div>
 
@@ -1015,7 +1218,7 @@
     <div class="section-header">
         <div>
             <div class="section-label">Reach Out</div>
-            <h2 class="section-title">Let's Connect</h2>
+            <h2 class="section-title">Let's Build Reliable Systems</h2>
         </div>
     </div>
 
@@ -1035,7 +1238,7 @@
 </div>
 
 <footer>
-    © 2025 Eugine Lopez · DevOps &amp; Software Engineer · Philippines<span>.</span>
+    © 2026 Eugine Lopez · DevOps &amp; Software Engineer · Philippines<span>.</span>
 </footer>
 
 <script>
