@@ -562,6 +562,291 @@
             color: var(--accent);
         }
 
+
+        /* ── PROJECT VIEW BUTTON & SAMPLE MODAL ── */
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-content {
+            margin-bottom: 1rem;
+        }
+
+        .project-view-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 1rem 0 1.25rem 0;
+            padding: 0.55rem 1.1rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+            font-family: 'DM Sans', sans-serif;
+            color: var(--accent);
+            background: rgba(26, 107, 255, 0.08);
+            border: 1px solid rgba(26, 107, 255, 0.22);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            width: fit-content;
+        }
+
+        .project-view-btn:hover {
+            background: var(--accent);
+            color: #ffffff;
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 107, 255, 0.25);
+        }
+
+        /* Modal Backdrop */
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(13, 13, 13, 0.75);
+            backdrop-filter: blur(8px);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-backdrop.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Modal Container */
+        .modal-window {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            max-width: 820px;
+            width: 100%;
+            max-height: 88vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 35px 90px rgba(0, 0, 0, 0.35);
+            transform: translateY(20px) scale(0.97);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+        }
+
+        .modal-backdrop.active .modal-window {
+            transform: translateY(0) scale(1);
+        }
+
+        .modal-header {
+            padding: 1.6rem 2rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+            background: #faf8f5;
+        }
+
+        .modal-kicker {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.35rem;
+        }
+
+        .modal-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--ink);
+            line-height: 1.2;
+        }
+
+        .modal-close {
+            background: transparent;
+            border: 1px solid var(--border);
+            font-size: 1.25rem;
+            color: var(--muted);
+            cursor: pointer;
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .modal-close:hover {
+            background: var(--ink);
+            color: white;
+            border-color: var(--ink);
+        }
+
+        .modal-body {
+            padding: 1.75rem 2rem;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .flow-section-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            margin-bottom: 0.65rem;
+        }
+
+        .modal-flow {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            margin-bottom: 1.6rem;
+            padding: 1rem;
+            background: #fbf9f6;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .flow-step {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #ffffff;
+            padding: 0.4rem 0.75rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--ink);
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+        }
+
+        .flow-step i {
+            color: var(--accent);
+            font-size: 0.78rem;
+        }
+
+        .flow-arrow {
+            color: var(--accent2);
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+
+        /* Modal Tabs */
+        .modal-tabs {
+            display: flex;
+            gap: 0.5rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 1.25rem;
+        }
+
+        .modal-tab-btn {
+            background: transparent;
+            border: none;
+            padding: 0.65rem 1.1rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.84rem;
+            font-weight: 600;
+            color: var(--muted);
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .modal-tab-btn:hover {
+            color: var(--ink);
+        }
+
+        .modal-tab-btn.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        .modal-desc-box {
+            font-size: 0.92rem;
+            line-height: 1.7;
+            color: #3b3b3b;
+            margin-bottom: 1.25rem;
+        }
+
+        .sample-code-box {
+            background: #111418;
+            color: #d1d5db;
+            border-radius: 10px;
+            padding: 1.2rem;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.82rem;
+            line-height: 1.6;
+            overflow-x: auto;
+            max-height: 340px;
+            border: 1px solid #23272e;
+            white-space: pre;
+        }
+
+        .sample-feature-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .sample-feature-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 0.88rem;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        .sample-feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent2);
+            font-weight: bold;
+        }
+
+        .modal-footer {
+            padding: 1.1rem 2rem;
+            background: #faf8f5;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-footer-tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .modal-footer-tag i {
+            color: var(--accent2);
+        }
+
         /* ── CERTIFICATIONS ── */
         .certs-grid {
             display: grid;
@@ -816,6 +1101,9 @@
             <p class="project-desc">
                 Built an end-to-end meeting processing workflow in self-hosted n8n. Ingests recorded audio via webhooks or cloud storage, runs speaker-diarized transcription using AssemblyAI polling loops, extracts structured decisions and action items with OpenAI GPT, automatically updates HubSpot CRM contacts, creates Google Calendar events, and dispatches email minutes with a mock testbed for local regression testing.
             </p>
+            <button class="project-view-btn" onclick="openProjectModal('meeting-audio')">
+                <i class="fas fa-sliders"></i> View Architecture &amp; Sample Data
+            </button>
             <div class="project-stack">
                 <span>n8n</span><span>OpenAI GPT</span><span>AssemblyAI</span><span>HubSpot CRM</span><span>Google Calendar</span><span>Webhooks</span><span>Docker</span>
             </div>
@@ -827,6 +1115,9 @@
             <p class="project-desc">
                 Designed a scheduled discovery workflow in n8n that queries remote opportunity and contract APIs for automation and DevOps requirements. Implements a 45-day rolling deduplication state engine, synthesizes tailored outreach note drafts with structured profile placeholders, and stages qualified listings directly into an execution review queue.
             </p>
+            <button class="project-view-btn" onclick="openProjectModal('opportunity-lead')">
+                <i class="fas fa-sliders"></i> View Architecture &amp; Sample Data
+            </button>
             <div class="project-stack">
                 <span>n8n</span><span>REST APIs</span><span>Deduplication</span><span>Automated Drafting</span><span>Workflow State</span><span>Schedule Trigger</span>
             </div>
@@ -838,6 +1129,9 @@
             <p class="project-desc">
                 Built an automated recruitment triage workflow in n8n handling candidate submissions, video introductions (Loom links), resumes, availability, and internal routing. Validates applicant data, tags profiles, synchronizes records with CRM pipelines, alerts team chat channels, and triggers candidate confirmation or document-recovery follow-ups.
             </p>
+            <button class="project-view-btn" onclick="openProjectModal('candidate-funnel')">
+                <i class="fas fa-sliders"></i> View Architecture &amp; Sample Data
+            </button>
             <div class="project-stack">
                 <span>n8n</span><span>CRM Webhooks</span><span>Google Drive</span><span>Gmail</span><span>Zulip / Slack API</span><span>Data Validation</span>
             </div>
@@ -849,6 +1143,9 @@
             <p class="project-desc">
                 Built GoHighLevel automation flows for dental appointment follow-up and lost-lead recovery. The workflow organizes contacts, appointment status, missed opportunities, follow-up tasks, and internal alerts so the team can respond faster and reduce unworked leads.
             </p>
+            <button class="project-view-btn" onclick="openProjectModal('lost-leads')">
+                <i class="fas fa-sliders"></i> View Architecture &amp; Sample Data
+            </button>
             <div class="project-stack">
                 <span>GoHighLevel</span><span>Lost Leads</span><span>Dentistry Appointments</span><span>CRM Tags</span><span>Follow-up Tasks</span><span>Automation Testing</span>
             </div>
@@ -882,6 +1179,9 @@
             <p class="project-desc">
                 Built a renewal reminder system keyed on next service date. The automation classifies upcoming, overdue, and high-value expired customers, prepares internal sales follow-up, and supports customer-facing reminder messages with a safe review-first launch path.
             </p>
+            <button class="project-view-btn" onclick="openProjectModal('renewal-reminder')">
+                <i class="fas fa-sliders"></i> View Architecture &amp; Sample Data
+            </button>
             <div class="project-stack">
                 <span>n8n</span><span>Python Cron</span><span>Postgres</span><span>Docker</span><span>Customer Reminders</span><span>Sales Tasks</span>
             </div>
@@ -904,6 +1204,9 @@
             <p class="project-desc">
                 Replaced a less reliable email-based reporting step with a direct Zulip API call through n8n. Verified the destination stream and topic, tested message output, and kept a rollback path to make the reporting workflow easier to maintain.
             </p>
+            <button class="project-view-btn" onclick="openProjectModal('weekly-reporting')">
+                <i class="fas fa-sliders"></i> View Architecture &amp; Sample Data
+            </button>
             <div class="project-stack">
                 <span>n8n</span><span>Zulip API</span><span>HTTP Request</span><span>Reporting</span><span>Testing</span><span>Rollback Path</span>
             </div>
@@ -1279,6 +1582,394 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.section').forEach(s => observer.observe(s));
+</script>
+
+
+<!-- Interactive Project Sample Modal -->
+<div id="projectModal" class="modal-backdrop" onclick="handleBackdropClick(event)">
+    <div class="modal-window">
+        <div class="modal-header">
+            <div class="modal-header-info">
+                <div id="modalKicker" class="modal-kicker">Automation Pipeline</div>
+                <h3 id="modalTitle" class="modal-title">Project Title</h3>
+            </div>
+            <button class="modal-close" onclick="closeProjectModal()" aria-label="Close modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="flow-section-label">Pipeline Architecture &amp; Execution Flow</div>
+            <div id="modalFlow" class="modal-flow">
+                <!-- Dynamically populated steps -->
+            </div>
+
+            <div class="modal-tabs">
+                <button class="modal-tab-btn active" onclick="switchModalTab('overview')"><i class="fas fa-info-circle"></i> Overview &amp; Logic</button>
+                <button class="modal-tab-btn" onclick="switchModalTab('sample')"><i class="fas fa-code"></i> Sample Payload / Output</button>
+                <button class="modal-tab-btn" onclick="switchModalTab('safeguards')"><i class="fas fa-shield-alt"></i> Safeguards &amp; QA</button>
+            </div>
+
+            <div id="tabOverview" class="tab-pane active">
+                <div id="modalDesc" class="modal-desc-box"></div>
+                <div class="flow-section-label">Key Process Capabilities</div>
+                <ul id="modalCapabilities" class="sample-feature-list"></ul>
+            </div>
+
+            <div id="tabSample" class="tab-pane">
+                <pre id="modalSampleCode" class="sample-code-box"></pre>
+            </div>
+
+            <div id="tabSafeguards" class="tab-pane">
+                <ul id="modalSafeguards" class="sample-feature-list"></ul>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="modal-footer-tag">
+                <i class="fas fa-check-circle"></i> <span id="modalFooterBadge">Verified in Local n8n Docker Environment</span>
+            </div>
+            <button class="btn btn-outline" style="padding: 0.45rem 1.2rem; font-size: 0.8rem;" onclick="closeProjectModal()">Close Preview</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Sample Project Details Database
+    const projectSamples = {
+        'meeting-audio': {
+            kicker: 'Workflow Automation · n8n · OpenAI GPT · HubSpot',
+            title: 'Meeting Audio Intelligence & CRM Action Router',
+            steps: [
+                { icon: 'fa-file-audio', label: 'Audio Ingestion' },
+                { icon: 'fa-rotate', label: 'AssemblyAI Polling' },
+                { icon: 'fa-brain', label: 'OpenAI Extraction' },
+                { icon: 'fa-user-check', label: 'HubSpot Sync' },
+                { icon: 'fa-calendar-check', label: 'Google Calendar' },
+                { icon: 'fa-envelope', label: 'Email Minutes' }
+            ],
+            overview: 'An end-to-end meeting recording intelligence pipeline in self-hosted n8n. Ingests raw meeting recordings via webhook, coordinates speaker-diarized transcription using AssemblyAI polling loops, and leverages OpenAI structured schema extraction to automatically upsert contacts, log notes into HubSpot, and schedule calendar follow-up appointments.',
+            capabilities: [
+                'Speaker-diarized transcription with reliable polling and exponential backoff.',
+                'OpenAI structured JSON extraction identifying key decisions, action items with assignees, and agreed follow-up slots.',
+                'Automated contact creation/lookup and note logging directly in HubSpot CRM.',
+                'Google Calendar integration that auto-schedules agreed follow-ups only when explicit dates are confirmed.'
+            ],
+            sampleCode: `// Sample Structured Meeting Notes (OpenAI Output Payload)
+{
+  "meetingId": "MTG-2026-8841",
+  "recordedAt": "2026-11-04T14:30:00Z",
+  "durationSeconds": 1420,
+  "participants": [
+    { "name": "Eugine Lopez", "role": "Automation Engineer" },
+    { "name": "Marcus Vance", "role": "Client Operations Director" }
+  ],
+  "executiveSummary": "Client confirmed readiness to migrate recruitment intake and appointment reminders to self-hosted n8n workflows.",
+  "actionItems": [
+    { "task": "Deploy n8n containerized staging stack", "assignee": "Eugine", "due": "2026-11-09" },
+    { "task": "Provide API sandbox tokens for HubSpot", "assignee": "Marcus", "due": "2026-11-07" }
+  ],
+  "agreedFollowUp": {
+    "hasAgreedFollowUp": true,
+    "targetDate": "2026-11-12T15:00:00Z",
+    "eventTitle": "n8n Workflow Demo & Integration Review"
+  },
+  "crmSync": {
+    "hubspotContactId": "HS-449102",
+    "status": "Contact Upserted",
+    "lifecycleStage": "Opportunity"
+  }
+}`,
+            safeguards: [
+                'Built-in regression test suite (test-meeting-audio-demo.ps1) tests all 4 branches locally without consuming paid API tokens.',
+                'Conditional execution gate: calendar events and HubSpot meetings only log if follow-up timestamps are verified.',
+                'Sensitive API tokens stay strictly within n8n credential vault; never written to workflow JSON exports.'
+            ],
+            badge: 'Verified in Local n8n Docker Environment'
+        },
+        'opportunity-lead': {
+            kicker: 'Workflow Automation · n8n · Data Pipeline · Lead Sourcing',
+            title: 'Automated Opportunity Lead Review Pipeline',
+            steps: [
+                { icon: 'fa-clock', label: 'Daily 9AM Schedule' },
+                { icon: 'fa-globe', label: 'Remotive API Query' },
+                { icon: 'fa-filter', label: '45-Day Deduplication' },
+                { icon: 'fa-tags', label: 'Skill Tag Matching' },
+                { icon: 'fa-pen-fancy', label: 'Draft Outreach Note' },
+                { icon: 'fa-list-check', label: 'Review Queue Staged' }
+            ],
+            overview: 'Scheduled workflow running daily at 9 AM UTC in n8n. Scans remote opportunity feeds for part-time automation, n8n, Zapier, Make, and DevOps roles, applies persistent 45-day rolling deduplication, and prepares structured outreach note drafts for quick review before submission.',
+            capabilities: [
+                'Continuous scheduled discovery with targeted query filtering for automation engineering.',
+                'Persistent deduplication storing seen job identifiers for 45 days in n8n static workflow memory.',
+                'Dynamic cover-note generation with structured profile placeholders ready for fast human review.'
+            ],
+            sampleCode: `// Sample Review Queue Record Staged in Execution Data
+{
+  "jobId": "REM-94102",
+  "title": "Part-Time Workflow Automation Specialist (n8n / APIs)",
+  "company": "Vanguard Media Group",
+  "jobType": "part_time",
+  "salary": "$40 - $60 / hr",
+  "source": "Remotive API",
+  "postedAt": "2026-11-05T08:00:00Z",
+  "deduplication": {
+    "status": "New (Not seen in prior 45 days)",
+    "expiresAt": "2026-12-20T08:00:00Z"
+  },
+  "stagedApplicationDraft": "Hello Vanguard Media Group hiring team,\n\nI am interested in your part-time Automation Specialist position. My background includes building self-hosted n8n containerized pipelines, HubSpot/CRM integrations, and custom webhook routers.\n\nThank you for your consideration,\nEugine Lopez"
+}`,
+            safeguards: [
+                'Strict 1-query/day rate limit to respect third-party API service terms.',
+                'Draft-only execution: prevents blind spam by requiring manual inspection before sending applications.',
+                'Automatic cleanup: entries older than 45 days are pruned to keep workflow memory lightweight.'
+            ],
+            badge: 'Active & Validated in Local n8n Stack'
+        },
+        'candidate-funnel': {
+            kicker: 'Workflow Automation · n8n · Candidate Triage',
+            title: 'Candidate Submission & Funnel Routing Automation',
+            steps: [
+                { icon: 'fa-inbox', label: 'Webhook Intake' },
+                { icon: 'fa-spell-check', label: 'Sanitize & Validate' },
+                { icon: 'fa-code-branch', label: 'Completeness Check' },
+                { icon: 'fa-database', label: 'CRM Stage Upsert' },
+                { icon: 'fa-bullhorn', label: 'Team Chat Alert' },
+                { icon: 'fa-envelope-circle-check', label: 'Confirmation Email' }
+            ],
+            overview: 'Recruitment intake pipeline in n8n that processes incoming candidate applications. Validates contact data, checks for valid Loom introduction recordings and resume links, updates CRM applicant stages, alerts team channels, and routes applicants automatically.',
+            capabilities: [
+                'Instant Webhook ingestion accepting applicant details from web forms or landing pages.',
+                'Validation node verifying URL formats and required assets (Loom recording + resume document).',
+                'Split routing: complete profiles notify hiring leads; incomplete submissions trigger polite recovery notices.'
+            ],
+            sampleCode: `// Sample Candidate Ingestion & Routing Payload
+{
+  "candidateId": "CAND-784102",
+  "fullName": "Jordan Rivera",
+  "email": "jordan.r@example.com",
+  "phone": "+63 917 555 0192",
+  "role": "Automation Engineer",
+  "city": "Batangas City",
+  "resumeUrl": "https://storage.cloud.example/resumes/jordan-rivera-cpe.pdf",
+  "loomUrl": "https://www.loom.com/share/94a8210fe91288b4",
+  "validation": {
+    "hasResume": true,
+    "hasLoom": true,
+    "isComplete": true
+  },
+  "crmRouting": {
+    "targetStage": "Under Review",
+    "assignedTeam": "Engineering Triage"
+  },
+  "teamNotification": {
+    "channel": "hiring-feed",
+    "deliveryStatus": "Sent (HTTP 200)"
+  }
+}`,
+            safeguards: [
+                'Regex normalization of phone numbers and lowercase email deduplication.',
+                'Missing asset fallback branch avoids pipeline stall by giving candidates a direct update link.',
+                'Internal alerts include one-click links to Loom videos and hosted resumes.'
+            ],
+            badge: 'Self-Contained n8n Generic Workflow'
+        },
+        'lost-leads': {
+            kicker: 'GoHighLevel · Lead Recovery · Appointment Reminders',
+            title: 'Lost Leads & Appointment Recovery Automation',
+            steps: [
+                { icon: 'fa-calendar-xmark', label: 'Missed / No-Show' },
+                { icon: 'fa-clock-rotate-left', label: 'Idle Check (>48h)' },
+                { icon: 'fa-shield-halved', label: 'Max Attempts (<=3)' },
+                { icon: 'fa-link', label: 'Reschedule Link' },
+                { icon: 'fa-comment-dots', label: 'Multi-Channel Alert' }
+            ],
+            overview: 'CRM automation engine built to reactivate stalled opportunities, missed appointments, and unworked inquiries without overwhelming contacts.',
+            capabilities: [
+                'Monitors CRM pipelines for opportunities stuck in "No Show" or "Contacted - No Response" for over 48 hours.',
+                'Generates personalized 1-click self-scheduling links tied directly to appointment calendars.',
+                'Enforces attempt ceiling (maximum 3 touches) to safeguard sender reputation and avoid spam complaints.'
+            ],
+            sampleCode: `// Sample Lead Recovery Dispatch Log
+{
+  "contactId": "CNT-901",
+  "fullName": "Marcus Vance",
+  "serviceType": "Dentistry / Comprehensive Examination",
+  "initialAppointment": "2026-11-03T10:00:00Z",
+  "stalledDurationHours": 52,
+  "attemptNumber": 2,
+  "maxAttemptsAllowed": 3,
+  "reEngagementPayload": {
+    "channel": "SMS & Email",
+    "message": "Hi Marcus, we missed you for your dental checkup! Reschedule easily here: https://booking.clinic.example/reschedule?cid=CNT-901",
+    "crmStage": "Recovery In Progress"
+  }
+}`,
+            safeguards: [
+                'Automated exclusion of leads with recent inbound activity within 24 hours.',
+                'Transitions exhausted contacts to an archived nurture segment after 3 failed attempts.'
+            ],
+            badge: 'Tested with Live CRM Pipelines'
+        },
+        'renewal-reminder': {
+            kicker: 'n8n · Contract Lifecycle · Postgres · VIP Alerts',
+            title: 'Customer Renewal Reminder & Follow-Up Automation',
+            steps: [
+                { icon: 'fa-clock', label: 'Daily 8AM Schedule' },
+                { icon: 'fa-database', label: 'Query Subscriptions' },
+                { icon: 'fa-calculator', label: 'Days Remaining Math' },
+                { icon: 'fa-layer-group', label: 'Tier Classification' },
+                { icon: 'fa-crown', label: 'High-Value ($5k+) Alert' },
+                { icon: 'fa-clipboard-check', label: 'Audit Log in DB' }
+            ],
+            overview: 'Automated contract lifecycle monitor built in n8n. Evaluates subscription renewal dates against the current timestamp, categorizing accounts into 30-day early warnings, 7-day urgent alerts, and expired grace periods.',
+            capabilities: [
+                'Automated date math calculating exact days to renewal across active subscriptions.',
+                'Multi-tier routing: 30-day friendly notice, 7-day urgent notice, and expired grace notice.',
+                'VIP high-value contract routing ($5,000+) alerts account executives to coordinate personalized outreach.'
+            ],
+            sampleCode: `// Sample Evaluated Subscription Record
+{
+  "contractId": "SUB-2081",
+  "clientName": "Metro Health Partners",
+  "serviceTier": "Custom Enterprise SLA",
+  "contractValue": 12500,
+  "renewalDate": "2026-11-13",
+  "daysUntilRenewal": 7,
+  "renewalTier": "urgent_7d",
+  "isHighValue": true,
+  "accountManager": "David Cole",
+  "actionsExecuted": [
+    "Dispatched VIP Slack notification to #vip-renewals",
+    "Prepared customer invoice portal renewal link",
+    "Logged reminder audit timestamp in Postgres"
+  ]
+}`,
+            safeguards: [
+                'Prevents duplicate reminder spam by storing dispatch timestamps per renewal cycle.',
+                'High-value contracts require account executive signoff before automated customer emails send.'
+            ],
+            badge: 'Postgres & Docker Stack Ready'
+        },
+        'weekly-reporting': {
+            kicker: 'n8n · Business Intelligence · Zulip & Slack API',
+            title: 'Weekly Operational & KPI Reporting Workflow',
+            steps: [
+                { icon: 'fa-calendar-week', label: 'Monday 8AM Cron' },
+                { icon: 'fa-chart-pie', label: 'Aggregate CRM Metrics' },
+                { icon: 'fa-arrow-trend-up', label: 'Compute WoW Growth' },
+                { icon: 'fa-file-lines', label: 'Markdown Assembly' },
+                { icon: 'fa-paper-plane', label: 'Direct Chat API Post' }
+            ],
+            overview: 'Operational reporting pipeline in n8n that queries lead acquisition counts, appointment conversions, and closed revenue, computes week-over-week trends, and broadcasts an executive summary into team chat.',
+            capabilities: [
+                'Replaced brittle email-to-stream forwarding with direct HTTP Request nodes to Zulip/Slack REST APIs.',
+                'Computes Week-over-Week (WoW) percentage deltas across primary business indicators.',
+                'Generates formatted Markdown tables and bullet highlights for cross-departmental visibility.'
+            ],
+            sampleCode: `// Sample Formatted Executive Markdown Briefing
+📊 **Weekly Executive Operations & KPI Summary** (Week 45 · Oct 28 - Nov 03)
+----------------------------------------------------
+• **New Leads Intake:** 142 (+18.3% vs prior week)
+• **Appointments Completed:** 38 (+18.8%)
+• **Closed-Won Revenue:** $54,000 (+16.1%)
+• **Lost Leads Re-Engaged:** 7 reactivated
+----------------------------------------------------
+✅ *Automated Report generated via n8n pipeline at 2026-11-03T08:00:00Z*`,
+            safeguards: [
+                'Destination topic & stream verification with fallback notification on delivery failure.',
+                'Rollback and retry path prevents silent metric reporting omissions.'
+            ],
+            badge: 'Tested with Zulip & Slack Webhooks'
+        }
+    };
+
+    function openProjectModal(projectId) {
+        const data = projectSamples[projectId];
+        if (!data) return;
+
+        document.getElementById('modalKicker').textContent = data.kicker;
+        document.getElementById('modalTitle').textContent = data.title;
+        document.getElementById('modalDesc').textContent = data.overview;
+        document.getElementById('modalFooterBadge').textContent = data.badge;
+
+        // Render steps
+        const flowContainer = document.getElementById('modalFlow');
+        flowContainer.innerHTML = '';
+        data.steps.forEach((step, idx) => {
+            const stepDiv = document.createElement('div');
+            stepDiv.className = 'flow-step';
+            stepDiv.innerHTML = `<i class="fas ${step.icon}"></i> <span>${step.label}</span>`;
+            flowContainer.appendChild(stepDiv);
+
+            if (idx < data.steps.length - 1) {
+                const arrow = document.createElement('span');
+                arrow.className = 'flow-arrow';
+                arrow.innerHTML = '→';
+                flowContainer.appendChild(arrow);
+            }
+        });
+
+        // Render capabilities
+        const capList = document.getElementById('modalCapabilities');
+        capList.innerHTML = '';
+        data.capabilities.forEach(cap => {
+            const li = document.createElement('li');
+            li.textContent = cap;
+            capList.appendChild(li);
+        });
+
+        // Render sample code
+        document.getElementById('modalSampleCode').textContent = data.sampleCode;
+
+        // Render safeguards
+        const safeList = document.getElementById('modalSafeguards');
+        safeList.innerHTML = '';
+        data.safeguards.forEach(s => {
+            const li = document.createElement('li');
+            li.textContent = s;
+            safeList.appendChild(li);
+        });
+
+        // Default to overview tab
+        switchModalTab('overview');
+
+        // Show modal
+        const modal = document.getElementById('projectModal');
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeProjectModal() {
+        const modal = document.getElementById('projectModal');
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function handleBackdropClick(event) {
+        if (event.target.id === 'projectModal') {
+            closeProjectModal();
+        }
+    }
+
+    function switchModalTab(tabName) {
+        const tabs = ['overview', 'sample', 'safeguards'];
+        const tabBtns = document.querySelectorAll('.modal-tab-btn');
+
+        tabs.forEach((tab, index) => {
+            const pane = document.getElementById('tab' + tab.charAt(0).toUpperCase() + tab.slice(1));
+            if (pane) {
+                if (tab === tabName) {
+                    pane.classList.add('active');
+                    tabBtns[index].classList.add('active');
+                } else {
+                    pane.classList.remove('active');
+                    tabBtns[index].classList.remove('active');
+                }
+            }
+        });
+    }
+
+    // Keyboard support: Escape closes modal
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeProjectModal();
+    });
 </script>
 
 </body>
