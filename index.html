@@ -779,6 +779,7 @@
                     </div>
                 </div>
                 <div class="hc-skills">
+                    <span class="hc-pill">n8n</span>
                     <span class="hc-pill">AWS</span>
                     <span class="hc-pill">Azure</span>
                     <span class="hc-pill">Airflow</span>
@@ -810,13 +811,35 @@
     <div class="projects-grid">
 
         <div class="project-card">
-            <div class="project-kicker">Side Project · GoHighLevel · Recruiting Funnel</div>
-            <div class="project-title">Candidate Submission &amp; Completion Automation</div>
+            <div class="project-kicker">Workflow Automation · n8n · AI · HubSpot</div>
+            <div class="project-title">Meeting Audio Intelligence &amp; CRM Action Router</div>
             <p class="project-desc">
-                Improved a GoHighLevel-connected recruiting funnel that handled candidate submissions, Loom links, resume links, city, availability, completion status, and internal routing. Updated workflow logic, cleaned unnecessary steps, removed redaction where no longer required, and verified completed records through test runs.
+                Built an end-to-end meeting processing workflow in self-hosted n8n. Ingests recorded audio via webhooks or cloud storage, runs speaker-diarized transcription using AssemblyAI polling loops, extracts structured decisions and action items with OpenAI GPT, automatically updates HubSpot CRM contacts, creates Google Calendar events, and dispatches email minutes with a mock testbed for local regression testing.
             </p>
             <div class="project-stack">
-                <span>GoHighLevel</span><span>n8n</span><span>Google Drive</span><span>Gmail</span><span>Zulip API</span><span>QA Testing</span>
+                <span>n8n</span><span>OpenAI GPT</span><span>AssemblyAI</span><span>HubSpot CRM</span><span>Google Calendar</span><span>Webhooks</span><span>Docker</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-kicker">Workflow Automation · n8n · Data Pipeline</div>
+            <div class="project-title">Automated Opportunity Lead Review Pipeline</div>
+            <p class="project-desc">
+                Designed a scheduled discovery workflow in n8n that queries remote opportunity and contract APIs for automation and DevOps requirements. Implements a 45-day rolling deduplication state engine, synthesizes tailored outreach note drafts with structured profile placeholders, and stages qualified listings directly into an execution review queue.
+            </p>
+            <div class="project-stack">
+                <span>n8n</span><span>REST APIs</span><span>Deduplication</span><span>Automated Drafting</span><span>Workflow State</span><span>Schedule Trigger</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-kicker">Workflow Automation · n8n · Lead Triage</div>
+            <div class="project-title">Candidate Submission &amp; Funnel Routing Automation</div>
+            <p class="project-desc">
+                Built an automated recruitment triage workflow in n8n handling candidate submissions, video introductions (Loom links), resumes, availability, and internal routing. Validates applicant data, tags profiles, synchronizes records with CRM pipelines, alerts team chat channels, and triggers candidate confirmation or document-recovery follow-ups.
+            </p>
+            <div class="project-stack">
+                <span>n8n</span><span>CRM Webhooks</span><span>Google Drive</span><span>Gmail</span><span>Zulip / Slack API</span><span>Data Validation</span>
             </div>
         </div>
 
@@ -1062,7 +1085,11 @@
                 <div class="skill-card-title">Workflow Automation &amp; Integrations</div>
             </div>
             <div class="tags">
-                <span class="tag">n8n</span>
+                <span class="tag">n8n (Self-Hosted)</span>
+                <span class="tag">AI &amp; OpenAI Nodes</span>
+                <span class="tag">HubSpot &amp; CRM Sync</span>
+                <span class="tag">Docker Compose</span>
+                <span class="tag">Workflow CI Validation</span>
                 <span class="tag">Zapier-style Automation</span>
                 <span class="tag">HTTP Request Nodes</span>
                 <span class="tag">REST APIs</span>
